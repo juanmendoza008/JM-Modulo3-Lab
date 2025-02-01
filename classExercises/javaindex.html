@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+</head>
+<body>
+    <h1>Welcome to My Basic HTML Page</h1>
+    <p>This is a paragraph of text on my basic HTML page.</p>
+
+    <script>
+        // comments 
+
+        const user = {
+            name: 'Juan',
+            age: 25,
+            email: 'carrots.abc@gmail.com',
+
+            hobbies: ['reading', 'coding', 'swimming']
+            
+        };
+
+        console.log(user.hobbies);
+        user.hobbies.push('biking');
+
+        function greet() {
+                console.log('Hello, my name is ' + user.name + ' and I am ' + user.age + ' years old.');
+            }
+
+        console.log(user.hobbies);
+        console.log(greet());
+
+        const phone = {
+          model: 'iPhone 11',
+          colour: 'black'
+        }
+        if (phone.colour) console.log(`My ${phone.model} is ${phone.colour}`) // prints message
+        if (phone.storage) { // undefined counts as false, so the below won't print
+        console.log(`My ${phone.model} has ${phone.storage}GB`);
+        }
+
+        const userA = {
+            name: 'Bilbo Baggins',
+            sing: function() { // method of user object
+            console.log('Roads go ever ever on');
+        },
+        sing2() { // shorthand method syntax, does same as above
+        console.log('Over rock and under tree');
+        }
+        }
+        userA.sing(); // Roads go ever ever on
+        userA.sing2(); // Over rock and under tree
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

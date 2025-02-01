@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Webpage</title>
+  </head>
+  <body>
+    <h1>Coin Flip</h1>
+    <script>
+      // COIN FLIP GAME
+
+     // Math.Random() < 0.5 ? ‘Heads’ : ‘Tails
+        function coinFlip() {
+            
+            return Math.random() < 0.5 ? 'Heads' : 'Tails';
+        }
+
+        console.log(coinFlip(),"coinFlip");
+
+        const phone = {
+          model: 'iPhone 11',
+          colour: 'black'
+        }
+        if (phone.colour) console.log(`My ${phone.model} is ${phone.colour}`) // prints message
+        if (phone.storage) { // undefined counts as false, so the below won't print
+        console.log(`My ${phone.model} has ${phone.storage}GB`);
+        }
+
+
+
+    </script>
+  </body>
+</html>
