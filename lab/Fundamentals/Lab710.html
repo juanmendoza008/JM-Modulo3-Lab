@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Seven</title>
+  </head>
+  <body>
+
+
+    <nav>
+      <ul>
+        <li><a href="/lab/Fundamentals/Lab710.html">Fundamentals</a></li>
+        <li><a href="/lab/Intermediate/index.html">Intermediate</a></li>
+        <li><a href="/lab/Advanced/index.html">Advanced</a></li>
+      </ul> 
+    </nav>
+
+
+    <ul id="lab_eight_ac_one"></ul>
+    <ul id="lab_eight_ac_two"></ul>
+
+    <h1 id="Score-Halftime"> </h1>
+    <h1 id="Score-Fulltime"> </h1>
+
+    <script>
+      /*
+      // Question 7
+      const basketballGame = {
+          score: 0,
+          foul: 0,
+
+          freeThrow() {
+              this.score++;
+              return this;
+          }, 
+          basket() {
+              this.score += 2;
+              return this;
+          },
+          threePointer() {
+              this.score += 3;
+              return this;
+          },
+          foul() {
+            this.foul++;
+            return this;
+          },
+          halfTime() {
+              console.log('Halftime score is '+this.score);
+              document.getElementById("Score-Halftime").innerHTML = 'Halftime score is ' + this.score + ', # of faults:' + this.foul;
+              return this;
+          },
+          fullTime() {
+              console.log('Fulltime score is '+this.score);
+              document.getElementById("Score-Fulltime").innerHTML = 'Fulltime score is ' + this.score + ', # of faults:' + this.foul;
+              return this;
+          }
+      }
+       //modify each of the above object methods to enable function chaining as below:
+      basketballGame
+      .basket()
+      .foul()
+      .freeThrow()
+      .freeThrow()
+      .foul()
+      .foul()
+      .basket()
+      .threePointer()
+      .halfTime()
+      .foul()
+      .foul()
+      .basket()
+      .threePointer()
+      .fullTime();
+      */
+      
+
+      
+      // Question 8
+
+      const Sydney = {
+        name: "Sydney",
+        population: 5_121_000,
+        state: "NSW",
+        founded: "26 January 1788",
+        timezone: "Australia/Sydney",
+      };
+
+      const Melbourne = {
+        name: "Melbourne",
+        population: 6_325_000,
+        state: "VIC",
+        founded: "24 August 1835",
+        timezone: "Australia/Melbourne",
+      };
+
+      function cityData(cityObject) {
+        // First console
+        for (city in cityObject) {
+          console.log(city + ": " + cityObject[city]);
+        }    
+      }
+      
+      console.log(cityData(Melbourne));
+      console.log(cityData(Sydney));
+
+      // create our function to loop through any object and print first the keys and values
+
+      // then see if i can pass that to another function which will take the keys and values
+      // and push them into lab_eight_ac_one and lab_eight_ac_two
+      
+      
+      /*
+      // Question 9
+      //a)
+      const teamSports = []
+      const moreSports = teamSports 
+      teamSports.push("Football","Baquetball", "Rugby")
+      teamSports.push("Baseball")
+      teamSports.unshift("Muay Thai")
+      console.log(teamSports)
+
+      //b) c)
+      let cat1 = {name: "Fluffy", breed: "Siberman"}
+      const dog1 = "Bingo"
+      let dog2 = dog1
+      let cat2 = cat1       
+
+      //console.log(cat2.name)
+      //cat2.name = "CossyCossy"
+      console.log("Cat1.name: " + cat1.name)
+      console.log("Cat2.name: " + cat2.name)
+      
+      //console.log(dog2.name)
+      dog2 = "Labrador"
+      console.log("Dog1.name: " + dog1)
+      console.log("Dog2.name: " + dog2)
+      
+      // e) spreed function [...] to copy the array
+      newteamSports = [...teamSports]
+      newteamSports.push("Tennis")
+      newteamSports.unshift("Boxing")
+
+      console.log("teamSports: " + teamSports)
+      console.log("newteamSports: " + newteamSports)
+
+      newcat2 = {...cat2}
+      newcat2.name = "CossyCossy"
+      console.log("Cat1.name: " + cat1.name)
+      console.log("newCat2.name: " + newcat2.name)
+      */
+
+
+      /*
+      // Question 10
+
+      function newPerson(name,age) {
+        this.name = name;
+        this.age = age;
+        this.human = true;
+        this.canDrive = function() {
+          if (this.age >= 18) {
+            return "old enough to drive";
+          } else {
+            return "not old enough to drive";
+          }
+        };
+
+      };
+
+      let person1 = new newPerson("John", 15);
+      let person2 = new newPerson("Juan", 23);
+      console.log(person1);
+      console.log("person1.name: " + person1.name + ", can drive: " + person1.canDrive());
+      console.log("person2.name: " + person2.name + ", can drive: " + person2.canDrive());
+
+      class PersonClass {
+        constructor(name,age){
+          this.name = name;
+          this.age = age;
+          this.human = true;
+          this.canDrive = function() {
+          if (this.age >= 18) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+        }
+      }
+
+      let person3 = new PersonClass("Jhonny", 27);
+      let person4 = new PersonClass("Ana", 17);
+      console.log("person3.name: " + person3.name + ", can drive: " + person3.canDrive());
+      console.log("person4.name: " + person4.name + ", can drive: " + person4.canDrive());
+
+      console.log( person1.name, " is ", person1.age, ", and ",person1.canDrive());
+      console.log( person2.name, " is ", person2.age, ", and ",person2.canDrive());
+      */
+
+
+
+    </script>
+  </body>
+</html>

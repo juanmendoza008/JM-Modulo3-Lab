@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+</head>
+<body>
+
+    <h1>Welcome to My Website</h1>
+    <p>This is a basic HTML page.</p>
+
+    <nav>
+        <ul>
+          <li><a href="/lab/Fundamentals/Lab710.html">Fundamentals</a></li>
+          <li><a href="/lab/Intermediate/index.html">Intermediate</a></li>
+          <li><a href="/lab/Advanced/index.html">Advanced</a></li>
+        </ul> 
+      </nav>
+
+    <script>
+        // Exercise 1
+        
+        const nameGeneric = (str) => {
+            if(str && typeof str == "string"){
+                console.log("suscess");
+                return 
+            }
+            
+            console.log("error, not a valid string");
+            
+        }
+        console.log(nameGeneric("los angeles") ) //Los Angeles
+       
+
+        /*
+        // Solution #2
+       const capitalise = (str) => str.chartAt(0).toUpperCase() + str.slice(1); 
+       const nameGeneric = (str) => {
+            if(str && typeof str == "string"){
+                console.log("suscess");
+                return str
+                
+                .slip(" ")
+                .map((word) => capitalise(word))
+                .join(" ");
+
+            }
+            
+            console.log("error, not a valid string");
+            return;
+        }
+       
+       console.log(nameGeneric("los angeles") ) //Los Angeles
+        */
+        
+        /*
+        // Exercise 2
+        // This text will be truncat...
+        const text = "This text will be truncated if it is too long but it too loing"
+        const secondText = 24 
+        function truncate(str,max) {
+            if(str && typeof str == "string"){
+                if (str.length > max) {
+                    return str.slice(0,max) + "...";
+                } else {
+                    return str;
+                }
+            }  
+            console.log("error, not a valid string");
+        };
+        console.log(truncate(text, 20))
+        console.log(truncate(secondText, 25))
+        */
+
+        //Exercise 3
+        const animals = ['Tiger', 'Giraffe']
+        animals.push("Eagle", "Shark")
+        animals.unshift("Lion", "Puma")
+
+        let animalsOrganise = [...animals]
+
+        console.log("List animals: "+ animals)
+        console.log("List animalsOrganise:" + animalsOrganise.sort())
+        console.log("List animalsOrganise:" + animalsOrganise.sort().reverse())
+
+        function replaceMiddleAnimal(newValue,List) {
+            let middleofArr = animals.length/2
+            if (animals.length % 2 == 0) {
+                animals.splice(middleofArr, 1, newValue)
+            } else {
+                animals.splice(middleofArr, 0, newValue)
+            }
+            list[middleofArr] = newValue
+            return list;
+
+        }
+        
+        console.log(replaceMiddleAnimal("Elephant", animalsOrganise))
+
+
+
+
+
+    
+    </script>
+
+
+
+
+
+</body>
