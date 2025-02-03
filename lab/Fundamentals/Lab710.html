@@ -25,7 +25,7 @@
     <h1 id="Score-Fulltime"> </h1>
 
     <script>
-      /*
+
       // Question 7
       const basketballGame = {
           score: 0,
@@ -43,41 +43,43 @@
               this.score += 3;
               return this;
           },
-          foul() {
+          fouls() {
             this.foul++;
             return this;
           },
           halfTime() {
               console.log('Halftime score is '+this.score);
-              document.getElementById("Score-Halftime").innerHTML = 'Halftime score is ' + this.score + ', # of faults:' + this.foul;
+              document.getElementById("Score-Halftime").innerHTML = 'Halftime score is ' + 
+                this.score + ', # of faults:' + this.foul;
               return this;
           },
           fullTime() {
               console.log('Fulltime score is '+this.score);
-              document.getElementById("Score-Fulltime").innerHTML = 'Fulltime score is ' + this.score + ', # of faults:' + this.foul;
+              document.getElementById("Score-Fulltime").innerHTML = 'Fulltime score is ' + 
+                this.score + ', # of faults:' + this.foul;
               return this;
           }
       }
        //modify each of the above object methods to enable function chaining as below:
       basketballGame
-      .basket()
-      .foul()
-      .freeThrow()
-      .freeThrow()
-      .foul()
-      .foul()
-      .basket()
-      .threePointer()
-      .halfTime()
-      .foul()
-      .foul()
-      .basket()
-      .threePointer()
-      .fullTime();
-      */
-      
+        .basket()
+        .fouls()
+        .freeThrow()
+        .freeThrow()
+        .fouls()
+        .fouls()
+        .basket()
+        .threePointer()
+        .halfTime()
+        .fouls()
+        .fouls()
+        .basket()
+        .threePointer()
+        .threePointer()
+        .fouls()
+        .fullTime();
 
-      
+      /*
       // Question 8
 
       const Sydney = {
@@ -103,8 +105,10 @@
         }    
       }
       
+      
       console.log(cityData(Melbourne));
       console.log(cityData(Sydney));
+      */
 
       // create our function to loop through any object and print first the keys and values
 

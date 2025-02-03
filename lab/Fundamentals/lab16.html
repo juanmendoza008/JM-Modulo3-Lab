@@ -1,41 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic HTML Page</title>
-</head>
-<body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a basic HTML page.</p>
-
-    <script>
-        console.log('Hello World');
-        // Labs JS Fundamentals 
-        // Exercise 1 
-        console.log('Exercise 1');
-        let a = "" + 1 + 0;
-        console.log(a + ' & ' + typeof a);
-        let b = "" - 1 + 0;
-        console.log(b + ' & ' + typeof b);
-        let c = "" + 1 + 0;
-        console.log(c + ' & ' + typeof c);
-        let d = "" + 1 + 0;
-        console.log(c + ' & ' + typeof c);
-        let e = "" + 1 + 0;
-        console.log(c + ' & ' + typeof c);
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic HTML Page</title>
+    </head>
     
-    
-    
-    </script>
+    <body>
+        <h1>Welcome to My Website</h1>
+        <p>This is a basic HTML page.</p>
 
+        <script>
+            // Labs JS Fundamentals 
+            console.log('Labs JS Fundamentals 1-6 Exercises');
 
+            //Exercise 4
+            //Version 1 - Ternary Operator
+            let a = 2, b = 3;
+            let result = `${a} + ${b} is `;
+            (a + b < 10) ? result += 'less than 10' : result += 'greater than 10';
+            console.log(result);
+            //Original code
+            let result2 = `${a} + ${b} is `;
+            if (a + b < 10) {
+            result2 += 'less than 10';
+            } else {
+            result2 += 'greater than 10';
+            }
+            console.log(result2);
 
+            //Exercise 5
+            //Function syntax
+            function getGreeting(name) {
+                return `Hello ${name}!`;
+            }
+            console.log(getGreeting("Juan") + ", This is function syntax")
+            //Arrow function
+            const getGreeting2 = (name) =>{
+                return `Hello ${name}!`;
+            }
+            console.log(getGreeting("Sebastian") + ", This is arrow syntax")
+            
+            //Excercise 6
+            const westley = {
+                name: 'Westley',
+                lastName: "Second",
+                numFingers: 5
+            }
+            const rugen = {
+                name: 'Count Rugen',
+                lastName: "Ines",
+                numFingers: 6
+            }
+            const inigo = {
+                firstName: 'Inigo',
+                lastName: "Montoya",
+                greeting(person) {
+                    let greeting = `Hello ${person.name} ${person.lastName}, my name is ${this.firstName} ${this.lastName}. `;
+                    console.log(greeting + this.getCatchPhrase(person));
+                },
+                getCatchPhrase : (person) =>{
+                    let compareFingers = 6;
+                    /*
+                    if (person.numFingers === compareFingers) {
+                        return "You killed my father. Prepare to die.";
+                    } else {
+                        return 'Nice to meet you.';
+                    }
+                    */
+                    return person.numFingers === compareFingers 
+                    ? "You killed my father. Prepare to die." 
+                    : 'Nice to meet you.';
+                
+            } }
+            inigo.greeting(westley)
+            inigo.greeting(rugen)
 
+            /*
+            //Exercise 1
+            console.log('Exercise 1');
+            let a = "" + 1 + 0;
+            console.log(a + ' & ' + typeof a);
+            let b = "" - 1 + 0;
+            console.log(b + ' & ' + typeof b);
+            let c = "" + 1 + 0;
+            console.log(c + ' & ' + typeof c);
+            let d = "" + 1 + 0;
+            console.log(c + ' & ' + typeof c);
+            let e = "" + 1 + 0;
+            console.log(c + ' & ' + typeof c);
+            */
 
-</body>
-
-
-
-</html>
+        </script>
+        </body>
+    </html>
