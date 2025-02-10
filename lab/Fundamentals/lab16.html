@@ -10,13 +10,33 @@
         <h1>Welcome to My Website</h1>
         <p>This is a basic HTML page.</p>
 
+        <nav>
+            <ul>
+              <li><a href="/lab/Fundamentals/lab16.html">Fundamentals_Lab16</a></li>
+              <li><a href="/lab/Fundamentals/Lab710.html">Fundamentals_Lab7-10</a></li>
+              <li><a href="/lab/Intermediate/index.html">Intermediate</a></li>
+              <li><a href="/lab/Advanced/index.html">Advanced</a></li>
+            </ul> 
+          </nav>
+
+        <h2>Exercise 4</h2>
+        <p id="Exe4"> </p>
+
+        <h2>Exercise 5</h2>
+        <p id="Exe5-part1"></p>
+        <p id="Exe5-part2"></p>
+
+        <h2>Exercise 6</h2>
+        <p id="Exe6-part1"></p>
+        <p id="Exe6-part2"></p>
+
         <script>
             // Labs JS Fundamentals 
             console.log('Labs JS Fundamentals 1-6 Exercises');
 
             //Exercise 4
             //Version 1 - Ternary Operator
-            let a = 2, b = 3;
+            let a = 8, b = 7;
             let result = `${a} + ${b} is `;
             (a + b < 10) ? result += 'less than 10' : result += 'greater than 10';
             console.log(result);
@@ -28,6 +48,8 @@
             result2 += 'greater than 10';
             }
             console.log(result2);
+            // Print in HTML web page
+            document.getElementById("Exe4").innerHTML= "Result " + result;
 
             //Exercise 5
             //Function syntax
@@ -35,11 +57,13 @@
                 return `Hello ${name}!`;
             }
             console.log(getGreeting("Juan") + ", This is function syntax")
+            document.getElementById("Exe5-part1").innerHTML= getGreeting("Juan") + ", This is function syntax";
             //Arrow function
             const getGreeting2 = (name) =>{
                 return `Hello ${name}!`;
             }
             console.log(getGreeting("Sebastian") + ", This is arrow syntax")
+            document.getElementById("Exe5-part2").innerHTML= getGreeting("Sebastian") + ", This is arrow syntax";
             
             //Excercise 6
             const westley = {
@@ -71,10 +95,14 @@
                     return person.numFingers === compareFingers 
                     ? "You killed my father. Prepare to die." 
                     : 'Nice to meet you.';
-                
+
             } }
-            inigo.greeting(westley)
-            inigo.greeting(rugen)
+            inigo.greeting(westley);
+            inigo.greeting(rugen);
+
+            document.getElementById("Exe6-part1").innerHTML= "Inigo greeting Westley: " + inigo.greeting(westley);
+            document.getElementById("Exe6-part2").innerHTML= "Inigo greeting Rugen: " + inigo.greeting(rugen);
+          
 
             /*
             //Exercise 1

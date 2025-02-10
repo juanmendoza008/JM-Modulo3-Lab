@@ -7,22 +7,23 @@
   </head>
   <body>
 
-
     <nav>
       <ul>
-        <li>Update test </li>
-        <li><a href="/lab/Fundamentals/Lab710.html">Fundamentals</a></li>
+        <li><a href="/lab/Fundamentals/lab16.html">Fundamentals_Lab16</a></li>
+        <li><a href="/lab/Fundamentals/Lab710.html">Fundamentals_Lab7-10</a></li>
         <li><a href="/lab/Intermediate/index.html">Intermediate</a></li>
         <li><a href="/lab/Advanced/index.html">Advanced</a></li>
       </ul> 
     </nav>
 
+    <h2>Exercise 7</h2>
+    <h2 id="Score-Halftime"> </h2>
+    <h2 id="Score-Fulltime"> </h2>
 
     <ul id="lab_eight_ac_one"></ul>
     <ul id="lab_eight_ac_two"></ul>
 
-    <h1 id="Score-Halftime"> </h1>
-    <h1 id="Score-Fulltime"> </h1>
+
 
     <script>
 
@@ -79,7 +80,7 @@
         .fouls()
         .fullTime();
 
-      /*
+      
       // Question 8
 
       const Sydney = {
@@ -98,17 +99,19 @@
         timezone: "Australia/Melbourne",
       };
 
+      let text="<ul>";
       function cityData(cityObject) {
         // First console
         for (city in cityObject) {
-          console.log(city + ": " + cityObject[city]);
+          console.log("<li>"+city + ": " + cityObject[city] + "</li>");
         }    
       }
-      
-      
+      text += "</ul>";
       console.log(cityData(Melbourne));
       console.log(cityData(Sydney));
-      */
+      document.getElementById("lab_eight_ac_one").innerHTML = cityData(Melbourne);
+      document.getElementById("lab_eight_ac_two").innerHTML = cityData(Sydney);
+      
 
       // create our function to loop through any object and print first the keys and values
 
@@ -116,19 +119,19 @@
       // and push them into lab_eight_ac_one and lab_eight_ac_two
       
       
-      /*
+      
       // Question 9
       //a)
       const teamSports = []
       const moreSports = teamSports 
-      teamSports.push("Football","Baquetball", "Rugby")
+      teamSports.push("Football","Basquetball", "Rugby")
       teamSports.push("Baseball")
       teamSports.unshift("Muay Thai")
       console.log(teamSports)
 
       //b) c)
       let cat1 = {name: "Fluffy", breed: "Siberman"}
-      const dog1 = "Bingo"
+      let dog1 = "Bingo"
       let dog2 = dog1
       let cat2 = cat1       
 
@@ -154,10 +157,8 @@
       newcat2.name = "CossyCossy"
       console.log("Cat1.name: " + cat1.name)
       console.log("newCat2.name: " + newcat2.name)
-      */
+      
 
-
-      /*
       // Question 10
 
       function newPerson(name,age) {
@@ -202,7 +203,7 @@
 
       console.log( person1.name, " is ", person1.age, ", and ",person1.canDrive());
       console.log( person2.name, " is ", person2.age, ", and ",person2.canDrive());
-      */
+      
 
 
 
