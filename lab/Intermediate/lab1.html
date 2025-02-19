@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+</head>
+<body>
+    <h1>Welcome to My Basic HTML Page</h1>
+    <p>This is a simple HTML page.</p>
+    <p id="lab1"></p>
+
+    <script>
+         // Exercise 1
+         const nameGeneric = (str) => {
+            if(str && typeof str == "string"){
+                return str
+                    .split(" ")
+                    .map(element => {
+                    let e=element.charAt(0).toUpperCase() 
+                    let d=element.slice(1)
+                    return e+d
+                })
+                .join(" ");
+                
+            }
+            
+            console.log("error, not a valid string");
+            return null; 
+        }
+        console.log(nameGeneric("los angeles") ) //Los Angeles
+        console.log(nameGeneric("Cospus magnun aldr dragon bujho") ) 
+        //console.log(nameGeneric(56576))
+        document.getElementById("lab1").innerHTML = nameGeneric("los angeles") + "<br>" + nameGeneric("Cospus magnun aldr dragon bujho");
+        
+
+    </script>
+</body>
+
+</html>

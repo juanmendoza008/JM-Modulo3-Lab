@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab5 Intermediate</title>
+</head>
+<body>
+    <h1>Welcome to My Basic HTML Page</h1>
+    <p>This is a simple HTML page.</p>
+
+    <script>
+       // Exercise 5
+       let twentyCents = 0.20
+        let tenCents = 0.10
+        console.log(`${twentyCents} + ${tenCents} = ${twentyCents + tenCents}`)
+        // 0.2 + 0.1 = 0.30000000000000004
+        let fixedTwenty = twentyCents.toFixed(2);
+        let fixedTen = tenCents.toFixed(2);
+        console.log(fixedTwenty + fixedTen) //why is this not working?
+        // a) toFixed() method returns a string, so you need to convert it back to a number before adding them together
+
+        // b
+        function currencyAddition(float1 , float2 ,numDecimals) {
+            
+        if (float1 && float2) {
+            let fixedOne = float1.toFixed(2);
+            let fixedTwo = float2.toFixed(2);
+            const summedValue = parseFloat(fixedOne) + parseFloat(fixedTwo);
+            return "$" + summedValue.toFixed(2);
+        }
+        return float1 + float2;
+        }
+        console.log("b) equals: ", currencyAddition(0.02, 0.05));
+            
+        //c
+        function currencyOperation(float1 , float2 ,operation,numDecimals) {
+            if (float1 && float2 && operation && numDecimals) {
+                
+                let fixedOne = float1.toFixed(numDecimals);
+                let fixedTwo = float2.toFixed(numDecimals);
+                
+                switch (operation) {
+                case "+":
+                const summedValue = parseFloat(fixedOne) + parseFloat(fixedTwo);
+                    return ("operator: " + operation + " ==> equals:" + summedValue.toFixed(numDecimals));
+                break;
+
+                case "-":
+                const restedValue = parseFloat(fixedOne) - parseFloat(fixedTwo);
+                    return ("operator: " + operation + " ==> equals:" + restedValue.toFixed(numDecimals));
+                break;
+                
+                case "*":
+                const  multiValue = parseFloat(fixedOne) * parseFloat(fixedTwo);
+                    return ("operator: " + operation + " ==> equals:" + multiValue.toFixed(numDecimals));
+                break;
+                
+                case "/":
+                    if (fixedTwo != 0) {
+                const diviValue = parseFloat(fixedOne) / parseFloat(fixedTwo);
+                    return ("operator: " + operation + " ==> equals:" + diviValue.toFixed(numDecimals)); 
+                    }
+                    else console.log("Number TWO is not a valid number"); 
+                break;
+                
+                default:
+                    return "Not a valid Operator(+,-,*,/): " + operation;   
+                
+                }
+                
+            }
+                
+        }
+    
+        console.log("c)");
+        console.log(currencyOperation(0.02, 0.05,"+",4));
+        console.log(currencyOperation(0.02, 0.05,"-",3));
+        console.log(currencyOperation(0.02, 0.05,"*",8));
+        console.log(currencyOperation(0.02, 0.05,"/",6));
+        console.log(currencyOperation(0.02, 0.05,"ABC",8));
+
+       
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab4 Intermediate</title>
+</head>
+<body>
+    <h1>Welcome to My Basic HTML Page</h1>
+    <p>This is a simple HTML page.</p>
+
+    <script>
+        // Exercise 4
+
+        const camelStringConverter = (str,specialCharacter = "-") => {
+            if(str && [specialCharacter].includes(str)) {
+                const splitStr = str.split("-");
+                return splitStr 
+                .map((word,index) => {
+                    if (index === 0) {
+                        return word;
+                    }
+                    return word.chartAt(0).toUpperCase()+word.slice(1);
+                })
+                .join("");
+
+            }
+            return str;
+        };
+
+        console.log(camelStringConverter('margin-left')) // marginLeft
+        console.log(camelStringConverter('background-image')) // backgroundImage
+        console.log(camelStringConverter('display')) // display
+
+        function camelCase(text) {
+            a = text.split("-")
+            a.array.forEach(word => {
+                if(a.lenght==0) camelStrg = word;
+                else camelStrg += word.chartAt(0).toUpperCase()+word.subtring(1);
+                console.log(camelStrg)                
+            });
+
+            console.log(a)
+        
+        }
+
+
+
+    </script>
+</body>
+</html>

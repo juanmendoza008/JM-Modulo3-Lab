@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2 Intermediate</title>
+</head>
+<body>
+    <h1>Welcome to My Basic HTML Page</h1>
+    <p>This is a paragraph of text on my basic HTML page.</p>
+    <p id="Lab2"> </p>
+
+    <script>
+        
+        // Exercise 2
+        // This text will be truncat...
+        const text = "This text will be truncated if it is too long but it too loing"
+        const secondText = 24
+        function truncate(str,max) {
+            if(str && typeof str == "string"){
+                if (str.length > max) {
+                    return str.slice(0,max) + "...";
+                } else {
+                    return str;
+                }
+            }  
+            return "Error, not a valid string";
+        };
+        console.log(truncate(text, 25))
+        console.log(truncate(secondText, 25))
+
+        document.getElementById("Lab2").innerHTML= "Result: " + truncate(text, 25) 
+            + "<br>" +truncate(secondText, 25);
+        
+
+
+    </script>
+
+
+
+</body>
+</html>

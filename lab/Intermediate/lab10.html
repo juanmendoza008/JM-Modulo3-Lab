@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+</head>
+<body>
+    <h1>Welcome to My Basic HTML Page</h1>
+    <p>This is a simple HTML page.</p>
+
+    <script>
+        // Exercise 10
+        
+        const today = new Date();
+        console.log('Current time is ' + today.toLocaleTimeString())
+        console.log(today.getHours() + ' hours have passed so far today')
+
+        //a is using the Time in the point of the world
+        minutesToday=today.getHours()*60+today.getMinutes()
+        console.log("//a) " + minutesToday + ' minutes have passed so far today')
+
+        //b 
+        secondsToday=today.getHours()*3600+today.getMinutes()*60+today.getSeconds()
+        console.log("//b) " + secondsToday + ' seconds have passed so far today')
+
+        //c 
+        const birthday = new Date("1997-08-28")
+
+        let years = today.getFullYear() - birthday.getUTCFullYear()
+        let months = today.getMonth - birthday.getMonth()
+        let days = today.getDate() - birthday.getDate()
+
+        // get the exact time 1) +1:00 hour 2) +1h:30 minutes 
+        
+        const updatedTime = new Date()
+            today.setHours(today.getHours + 1)
+        console.log(today.toLocaleDateString())
+        console.log(updatedTime.toLocaleDateString())
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -19,84 +19,187 @@
       </nav>
 
     <script>
-        // Exercise 1
-        
-        const nameGeneric = (str) => {
-            if(str && typeof str == "string"){
-                console.log("suscess");
-                return 
-            }
-            
-            console.log("error, not a valid string");
-            
-        }
-        console.log(nameGeneric("los angeles") ) //Los Angeles
        
+        
+        /*
+        
 
         /*
-        // Solution #2
-       const capitalise = (str) => str.chartAt(0).toUpperCase() + str.slice(1); 
-       const nameGeneric = (str) => {
-            if(str && typeof str == "string"){
-                console.log("suscess");
-                return str
-                
-                .slip(" ")
-                .map((word) => capitalise(word))
-                .join(" ");
+        //Exercise 7
+        const books = [
+            { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+            { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+            { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+            { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+            { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+            ];
 
-            }
+        //a 
+        /*
+
+        const getBookTittle = (bookId,library) {
+            if (bookId) {
+                return library.find(book => book.id
             
-            console.log("error, not a valid string");
-            return;
+            
+            });
         }
-       
-       console.log(nameGeneric("los angeles") ) //Los Angeles
         */
-        
+
         /*
-        // Exercise 2
-        // This text will be truncat...
-        const text = "This text will be truncated if it is too long but it too loing"
-        const secondText = 24 
-        function truncate(str,max) {
-            if(str && typeof str == "string"){
-                if (str.length > max) {
-                    return str.slice(0,max) + "...";
-                } else {
-                    return str;
-                }
-            }  
-            console.log("error, not a valid string");
+        // Examples solution /a)
+        const bookTitles = () => {
+            return books.map((book) => book.title);
+            };
+            console.log(bookTitles());
+
+        //To return book titles
+
+        const bookTitles1 = () => books.map((book) => book.title);
+            console.log(bookTitles())
+
+
+
+        //b 
+        const getBookYear = (bookYear,library) {
+            if (bookYear) {
+                return library.filter((book) => book.year <= bookYear)
+            };
+            return "no year passed in"
+        }
+        //c
+        const addGenre = () => {
+            return books.map((book) => {
+                return {...book,genre:"classic"};
+            });
+        }
+        console.log("addGenre",addGenre());
+        
+        //d 
+        // const getTitles = (authorInitial,library) => {
+        //     if (authorInitial) {
+        //         return library.filter((book) => book.author.startWith()
+        //         authorInitial.lowerCase())
+            
+        //     )};
+        // }
+
+        const getTitles = (authorInitial, library) => {
+            if (authorInitial && library.length) {
+                // return library.filter((book) => book.author[0] === authorInitial);
+                return library
+                    .filter((book) => 
+                    book.author.toLowerCase().startsWith(authorInitial.toLowerCase())
+                    )
+                    .map((book) => { 
+                        book.title;
+                    });
+            }
+            return [];
         };
-        console.log(truncate(text, 20))
-        console.log(truncate(secondText, 25))
+        console.log("getTitles:", getTitles("f", books));
+
+        //const latestBook = (bookYear)
+
         */
 
-        //Exercise 3
-        const animals = ['Tiger', 'Giraffe']
-        animals.push("Eagle", "Shark")
-        animals.unshift("Lion", "Puma")
-
-        let animalsOrganise = [...animals]
-
-        console.log("List animals: "+ animals)
-        console.log("List animalsOrganise:" + animalsOrganise.sort())
-        console.log("List animalsOrganise:" + animalsOrganise.sort().reverse())
-
-        function replaceMiddleAnimal(newValue,List) {
-            let middleofArr = animals.length/2
-            if (animals.length % 2 == 0) {
-                animals.splice(middleofArr, 1, newValue)
-            } else {
-                animals.splice(middleofArr, 0, newValue)
-            }
-            list[middleofArr] = newValue
-            return list;
-
+        /*
+        //8 
+        const phoneBookABC = new Map() //an empty map to begin with
+        phoneBookABC.set('Annabelle', '0412312343')
+        phoneBookABC.set('Barry', '0433221117')
+        phoneBookABC.set('Caroline', '0455221182')
+        //a) b)
+        const phoneBookDEF = new Map([
+            ['Dylan', '0454312325'],
+            ['Eduardo', '0424221114'],
+            ['Finn', '0477221193'],
+        ]);
+        // c)
+        phoneBookABC.set("Caroline",'0456221198')
+        // d)
+        const printPhoneBook = (list) => {
+                let text=""
+                list.forEach((number,name) => {
+                    text = name + " = " + number   
+                    console.log(text)
+                });              
         }
+
+        console.log(printPhoneBook(phoneBookABC))
+
+        // e)
+        const phoneBook = new Map([
+            ...phoneBookABC,
+            ...phoneBookDEF,
+        ]);
+
+        // f)
+        const printNames = (list) => {
+                let text=""
+                list.forEach((number,name) => {
+                    text = name    
+                    console.log(text)
+                });              
+        }
+
+        console.log(printNames(phoneBook))
+        */ 
+
+        // Exercise 9 
+        let salaries = {
+            "Timothy" : 35000,
+            "David" : 25000,
+            "Mary" : 55000,
+            "Christina" : 75000,
+            "James" : 43000
+        };
+        // a)
+        const sumSalaries = (list) => {
+            let sum=0
+            for (let [name,salary] of Object.entries(list)) {
+                sum += salary
+            }
+            return sum;
+            //console.log(sum)
+        };
+
+        console.log("Sum salaries: " + sumSalaries(salaries))
+        console.log(Objects )
+
+        // b)
+        function biggestSalary(list) {
+            let max=0;
+            let nameEarner="";
+            for (let [name,salary] in Object.entries(list)) {
+                console.log("Test1")
+                if (salary>max) {
+                    max=salary;
+                    nameEarner=name;  
+                } 
+            }
+            return topEarner;
+        };
+
+        console.log(biggestSalary(salaries))
+
+
+
+
+
+
+
+
+
+
+
+
+
         
-        console.log(replaceMiddleAnimal("Elephant", animalsOrganise))
+
+
+
+
 
 
 

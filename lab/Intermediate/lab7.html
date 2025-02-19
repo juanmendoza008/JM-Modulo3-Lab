@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+</head>
+<body>
+    <h1>Welcome to My Basic HTML Page</h1>
+    <p>This is a simple HTML page.</p>
+
+    <script>
+       
+        //Exercise 7
+        const books = [
+            { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+            { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+            { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+            { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+            { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+            ];
+
+        //a 
+        /*
+
+        const getBookTittle = (bookId,library) {
+            if (bookId) {
+                return library.find(book => book.id
+            
+            
+            });
+        }
+        */
+
+        
+        // Examples solution /a)
+        const bookTitles = () => {
+            return books.map((book) => book.title);
+            };
+            console.log(bookTitles());
+
+        //To return book titles
+
+        const bookTitles1 = () => books.map((book) => book.title);
+            console.log(bookTitles())
+
+
+
+        //b 
+        const getBookYear = (bookYear,library) {
+            if (bookYear) {
+                return library.filter((book) => book.year <= bookYear)
+            };
+            return "no year passed in"
+        }
+        //c
+        const addGenre = () => {
+            return books.map((book) => {
+                return {...book,genre:"classic"};
+            });
+        }
+        console.log("addGenre",addGenre());
+        
+        //d 
+        const getTitles = (authorInitial, library) => {
+            if (authorInitial && library.length) {
+
+                // return library.filter((book) => book.author[0] === authorInitial);
+                return library
+                    .filter((book) => 
+                    book.author.toLowerCase().startsWith(authorInitial.toLowerCase())
+                    )
+                    .map((book) => { 
+                        book.title;
+                    });
+            }
+            return [];
+        };
+        console.log("getTitles:", getTitles("f", books));
+
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

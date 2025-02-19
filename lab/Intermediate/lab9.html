@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+</head>
+<body>
+    <h1>Welcome to My Basic HTML Page</h1>
+    <p>This is a simple HTML page.</p>
+
+    <script>
+
+        //8 
+        const phoneBookABC = new Map() //an empty map to begin with
+        phoneBookABC.set('Annabelle', '0412312343')
+        phoneBookABC.set('Barry', '0433221117')
+        phoneBookABC.set('Caroline', '0455221182')
+        //a) b)
+        const phoneBookDEF = new Map([
+            ['Dylan', '0454312325'],
+            ['Eduardo', '0424221114'],
+            ['Finn', '0477221193'],
+        ]);
+        // c)
+        phoneBookABC.set("Caroline",'0456221198')
+        // d)
+        const printPhoneBook = (list) => {
+                let text=""
+                list.forEach((number,name) => {
+                    text = name + " = " + number   
+                    console.log(text)
+                });              
+        }
+
+        console.log(printPhoneBook(phoneBookABC))
+
+        // e)
+        const phoneBook = new Map([
+            ...phoneBookABC,
+            ...phoneBookDEF,
+        ]);
+
+        // f)
+        const printNames = (list) => {
+                let text=""
+                list.forEach((number,name) => {
+                    text = name    
+                    console.log(text)
+                });              
+        }
+
+        console.log(printNames(phoneBook))
+
+
+
+    </script>
+</body>
+</html>
