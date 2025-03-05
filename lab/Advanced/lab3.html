@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+</head>
+<body>
+    <!--
+    <h1 id="h1_test">Welcome to My Website</h1>
+    <h2 id="h2_test">Welcome to My Website</h2>
+    <p id="p_test">This is a basic HTML page.</p>
+    -->
+
+    <h1>Welcome to JavaScript Advanced - Lab 3 - Debounce</h1>    
+    <div id="message-to-update"></div>    
+    <button onClick="debounceCallBack('Only the last click work!!!')">Click Me</button>
+
+    <script>
+        // lab3 
+        
+        function printMe() {
+            console.log('printing debounced message')
+        }
+        printMe = debounce(printMe); 
+        
+        //create this debounce function for a)
+        function debounce(func) {
+            //let message = setTimeout(printMe,1000,"print after one seconf")
+            let timeout;
+            return function() {
+                clearTimeout(timeout);
+                timeout = setTimeout(func, 100);
+            };
+        }
+        
+        //fire off 3 calls to printMe within 300ms - only the LAST one should print, after 1000ms of no calls
+        setTimeout( printMe, 100,"Option1");
+        setTimeout( printMe, 200,"Option2");
+        setTimeout( printMe, 300,"Option3");
+        
+
+        // b) & c)
+        function printMe(msg) {
+            const elementToUpdate = document.getElementById("message-to-update");
+            elementToUpdate.innerText = `Debouncing - a new concept: ${msg}`;
+            console.log(`Debouncing - a new concept: ${msg}`);
+        }            
+        function debounce(func, delay) {
+            let timeout;            
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(...args), delay);
+            };
+        }        
+        const debounceCallBack = debounce(printMe, 5000)        
+        debounceCallBack('Initial msg')
+        
+         /* 
+       function makeHeading(hTag) { // every call to makeHeading could have different values for hTag
+            return function(title) { // unnamed closure function, can access value of hTag when created
+            return `<${hTag}>${title}</${hTag}>`
+            }
+        }
+        const getH1 = makeHeading('h1') // sets hTag to h1, creates new instance of closure in getH1
+        const getH2 = makeHeading('h2') // sets hTag to h2, creates separate instance of closure in getH2
+        
+
+        const h1Element = document.getElementById("h1_test");
+        h1Element.innerHTML = getH1("h1 Something here");
+
+        const h2Element = document.getElementById("h2_test");
+        h2Element.innerHTML = getH2("h2 Something here");
+        */
+        
+
+
+    </script>
+
+
+
+
+
+</body>
